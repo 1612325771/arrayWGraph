@@ -1,8 +1,8 @@
 CC = icc
 CFLAGS = -std=c++11
-
+LIB = -I include
 all: 
-	$(CC) -c main.cpp $(CFLAGS) -o arrayWGraph
+	$(CC) main.cpp $(CFLAGS) $(LIB) -o arrayWGraph
 
 .PHONY: clean
 

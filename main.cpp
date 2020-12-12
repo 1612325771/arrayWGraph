@@ -1,5 +1,5 @@
-#include "arrayWGraph.h"
-#include "weightedEdge.h"
+#include <arrayWGraph.h>
+#include <weightedEdge.h>
 #include <iostream>
 
 #define OUTPUT_PATH "./output.dat"
@@ -16,14 +16,16 @@ int main(int argc, char *argv[])
 	}
 
 	string inputPath = argv[1];
-
+	
 	arrayWGraph<int> g(0);
 	g.init(inputPath);
 
 	cout << "The number of vertex = " << g.numberOfVertices() << endl;
 	cout << "The number of edge = " << g.numberOfEdges() << endl;
 	cout << endl;
-
+	
+	cout << "The arrayWGraph is" << endl;
+	cout << g << endl;
 
 	if (g.cycle()) cout << "Is cycled" << endl;
 	else cout << "No cycled" << endl;
