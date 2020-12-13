@@ -16,3 +16,6 @@ make
 ```
 ./arrayWGraph init.dat
 ```
+
+## 反馈
+如发现BUG欢迎提交issue，如果觉得对你有帮助，请点一个star，谢谢 :-)
