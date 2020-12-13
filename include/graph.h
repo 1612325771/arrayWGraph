@@ -62,9 +62,9 @@ public:
 	}
 
 	virtual bool cycle()
-	{
+	{// 判断图是否有向
 		if (directed())
-		{
+		{// 有向图使用拓扑排序检测环路
 			int n = numberOfVertices();
 
 			int *inDegree = new int[n + 1];
@@ -106,7 +106,7 @@ public:
 		}
 
 		else
-		{
+		{// 无向图使用连通量边与顶点关系检测环路
 			int n = numberOfVertices();
 			int e = numberOfEdges();
 
@@ -122,7 +122,7 @@ public:
 			
 			vector<int> temp;
 			while (lastLabel > 0)
-			{
+			{// 遍历每一个连通量
 				for (int i = 1; i < n + 1; i++)
 				{// O(n)
 					if (labeled[i] == lastLabel)
@@ -137,8 +137,9 @@ public:
 
 				for (int i = 0; i < temp.size(); i++)
 				{// O(v^2)
+				// 遍历连通量的每一个顶点
 					for (int j = i; j < temp.size(); j++)
-					{
+					{// 两个顶点间存在边
 						if (existsEdge(temp[i], temp[j])) edgeOfComponent++;
 					}
 
